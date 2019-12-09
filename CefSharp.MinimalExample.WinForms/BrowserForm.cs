@@ -174,5 +174,11 @@ namespace CefSharp.MinimalExample.WinForms
         {
             browser.ShowDevTools();
         }
+
+        private void bugToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            var vis = browser.GetBrowserHost().GetVisibleNavigationEntry();
+            if (vis == null) MessageBox.Show("Buggy", "Buggy", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
